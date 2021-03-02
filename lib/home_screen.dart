@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -15,21 +15,26 @@ class _HomeScreenState extends State<HomeScreen> {
     var size = MediaQuery.of(context).size;
 
     //style
-    var cardTextStyle = TextStyle(
-        fontFamily: "Montserrat Reguler",
+    var cardTextStyle = GoogleFonts.nunito(
         fontSize: 15,
-        color: Color.fromRGBO(63, 63, 63, 1));
+        color: Color.fromRGBO(63, 63, 63, 1),
+        fontWeight: FontWeight.w600);
 
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Container(
-            height: size.height * .3,
+            padding: EdgeInsets.all(16.0),
+            height: size.height * .2,
             decoration: BoxDecoration(
-              image: DecorationImage(
-                  alignment: Alignment.topCenter,
-                  image: AssetImage('assets/images/sunrise.png')),
-            ),
+                // image: DecorationImage(
+                //     alignment: Alignment.topCenter,
+                //     image: AssetImage('assets/images/sunrise.png')),
+                color: Colors.yellow[900],
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30.0),
+                  bottomRight: Radius.circular(30.0),
+                )),
           ),
           SafeArea(
             child: Padding(
@@ -42,11 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: NetworkImage(
-                              'https://i.pinimg.com/originals/78/07/03/78070395106fcd1c3e66e3b3810568bb.jpg'),
-                        ),
                         SizedBox(
                           width: 16,
                         ),
@@ -55,18 +55,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'Ikram',
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat Medium',
-                                  color: Colors.black,
-                                  fontSize: 20),
+                              'Dzikir Pagi dan Petang',
+                              style: GoogleFonts.nunito(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 23,
+                                color: Colors.white,
+                              ),
                             ),
                             Text(
-                              '12345',
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat Medium',
-                                  color: Colors.black,
-                                  fontSize: 14),
+                              "Sesuai as-Sunnah",
+                              style: GoogleFonts.nunito(
+                                fontStyle: FontStyle.italic,
+                                color: Colors.white,
+                              ),
                             )
                           ],
                         )
@@ -132,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               Container(
                                 child: Image.asset(
-                                  'assets/images/sunrise.png',
+                                  'assets/images/pray.png',
                                   height: 125.0,
                                   fit: BoxFit.cover,
                                 ),
@@ -154,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               Container(
                                 child: Image.asset(
-                                  'assets/images/sunrise.png',
+                                  'assets/images/question.png',
                                   height: 125.0,
                                   fit: BoxFit.cover,
                                 ),

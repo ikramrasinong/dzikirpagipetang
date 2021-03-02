@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     //style
     var cardTextStyle = TextStyle(
         fontFamily: "Montserrat Reguler",
-        fontSize: 14,
+        fontSize: 15,
         color: Color.fromRGBO(63, 63, 63, 1));
 
     return Scaffold(
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   alignment: Alignment.topCenter,
-                  image: AssetImage('assets/image/top_header.png')),
+                  image: AssetImage('assets/images/sunrise.png')),
             ),
           ),
           SafeArea(
@@ -87,9 +87,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(
-                                Icons.ac_unit_sharp,
-                                size: 20,
+                              Container(
+                                child: Image.asset(
+                                  'assets/images/sunrise.png',
+                                  height: 125.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               Text(
                                 'Dzikir Pagi',
@@ -105,9 +108,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(
-                                Icons.ac_unit_sharp,
-                                size: 20,
+                              Container(
+                                child: Image.asset(
+                                  'assets/images/sunsets.png',
+                                  height: 125.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               Text(
                                 'Dzikir Petang',
@@ -116,6 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                         ),
+
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
@@ -123,18 +130,21 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(
-                                Icons.ac_unit_sharp,
-                                size: 20,
+                              Container(
+                                child: Image.asset(
+                                  'assets/images/sunrise.png',
+                                  height: 125.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               Text(
-                                'Dzikir Setelah Sholat Wajib',
+                                "Do'a-do'a Harian",
                                 style: cardTextStyle,
-                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
                         ),
+
                         Card(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
@@ -142,9 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(
-                                Icons.ac_unit_sharp,
-                                size: 20,
+                              Container(
+                                child: Image.asset(
+                                  'assets/images/sunrise.png',
+                                  height: 125.0,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               Text(
                                 'Tentang',

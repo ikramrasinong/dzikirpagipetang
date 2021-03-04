@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0),
                 ),
                 Text(
-                  "Lihat semua",
+                  "Lainnya",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 12.0,
@@ -53,7 +53,72 @@ class _HomeScreenState extends State<HomeScreen> {
                 _gridItem(Icons.image),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Row(
+              children: <Widget>[
+                Text(
+                  "Lautan Ilmu",
+                  style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+          _cardItem(1),
+          _cardItem(2),
+          _cardItem(3),
+          _cardItem(4),
+          _cardItem(5),
+        ],
+      ),
+    );
+  }
+
+  _cardItem(image) {
+    return Padding(
+      padding: EdgeInsets.all(16.0),
+      child: Row(
+        children: <Widget>[
+          Container(
+            width: 100.0,
+            height: 100.0,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/videokajian/$image.jpg"),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(20.0)),
+          ),
+          SizedBox(width: 20.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                "Apa itu Salafy?",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22.0,
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Text(
+                "Ustadz Fulan",
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              Text(
+                "Tonton",
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
@@ -123,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           TextField(
             decoration: InputDecoration(
-                hintText: "Search",
+                hintText: "Cari",
                 fillColor: Colors.white,
                 filled: true,
                 suffixIcon: Icon(Icons.filter_list),

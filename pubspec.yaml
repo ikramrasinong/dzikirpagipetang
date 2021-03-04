@@ -46,11 +46,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/sunrise.png
-    - assets/images/sunsets.png
-    - assets/images/information.png
-    - assets/images/pray.png
-    - assets/images/question.png
+    - assets/images/muslim.png
     
     # - assets/images/sunrise.svg
     # - assets/images/sunsets.svg

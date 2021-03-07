@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
+import 'package:dzikirpagipetang/screen/screen_dzikirpagi.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);
@@ -45,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3, childAspectRatio: 3 / 2),
               children: <Widget>[
-                _gridItem(Icons.wb_sunny_rounded),
-                _gridItem(Icons.wb_sunny_outlined),
+                _gridItemDzikirPagi(Icons.wb_sunny_rounded),
+                _gridItem(Icons.night_shelter),
                 _gridItem(Icons.calendar_today),
                 _gridItem(Icons.library_books),
                 _gridItem(Icons.pan_tool_sharp),
@@ -72,6 +73,56 @@ class _HomeScreenState extends State<HomeScreen> {
           _cardItem(5),
         ],
       ),
+    );
+  }
+
+  _gridItemDzikirPagi(icon) {
+    return Column(
+      children: <Widget>[
+        GestureDetector(
+          onTap: () {
+            //otw dzikir pagi
+            Navigator.pushNamed(context, '/DzikirPagi');
+          },
+          child: CircleAvatar(
+            child: Icon(
+              icon,
+              size: 16.0,
+              color: Colors.white,
+            ),
+            backgroundColor: Colors.lightGreen.withOpacity(0.9),
+          ),
+        ),
+        SizedBox(height: 10.0),
+        Text(
+          "Dzikir Pagi",
+          style: TextStyle(
+            fontSize: 11.0,
+          ),
+        ),
+      ],
+    );
+  }
+
+  _gridItem(icon) {
+    return Column(
+      children: <Widget>[
+        CircleAvatar(
+          child: Icon(
+            icon,
+            size: 16.0,
+            color: Colors.white,
+          ),
+          backgroundColor: Colors.lightGreen.withOpacity(0.9),
+        ),
+        SizedBox(height: 10.0),
+        Text(
+          "Dzikir Petang",
+          style: TextStyle(
+            fontSize: 11.0,
+          ),
+        ),
+      ],
     );
   }
 
@@ -121,28 +172,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-    );
-  }
-
-  _gridItem(icon) {
-    return Column(
-      children: <Widget>[
-        CircleAvatar(
-          child: Icon(
-            icon,
-            size: 16.0,
-            color: Colors.white,
-          ),
-          backgroundColor: Colors.lightGreen.withOpacity(0.9),
-        ),
-        SizedBox(height: 10.0),
-        Text(
-          "Dzikir Pagi",
-          style: TextStyle(
-            fontSize: 11.0,
-          ),
-        ),
-      ],
     );
   }
 
